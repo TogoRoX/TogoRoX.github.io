@@ -11,7 +11,7 @@ body {
     font-weight: 400;
     color: #fff;
     font-size: 16px;
-
+    line-height: 1.6;
 }
 
 a {
@@ -40,7 +40,7 @@ img {
 
 /* Хедер */
 header {
-    padding: 800px 0 30px; /* Увеличил верхний отступ */
+    padding: 60px 0 30px;
     position: relative;
 }
 
@@ -124,31 +124,6 @@ header nav ul li.btn a {
 header nav ul li.btn a:hover {
     background: #69174f;
     transform: scale(1.05);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    header {
-        padding: 40px 0 20px; /* Меньше отступ на мобильных */
-    }
-    
-    header nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    header nav ul li.active::after {
-        bottom: -3px;
-    }
-    
-    header nav ul li:not(.active):not(.btn)::after {
-        bottom: -3px;
-    }
-    
-    header nav ul li.btn a {
-        margin-left: 0;
-        margin-top: 10px;
-    }
 }
 
 /* Герой секция */
@@ -329,7 +304,7 @@ header nav ul li.btn a:hover {
     margin-top: 20px;
 }
 
-/* Стили для блока геопозиции */
+/* Location */
 .location {
     padding: 50px 0;
 }
@@ -344,7 +319,7 @@ header nav ul li.btn a:hover {
 .location-content {
     display: flex;
     gap: 30px;
-    align-items: stretch; /* Важно: растягиваем элементы по высоте */
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -357,11 +332,6 @@ header nav ul li.btn a:hover {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Распределяем контент по высоте */
-}
-
-.location-info-content {
-    flex: 1;
 }
 
 .location-info h4 {
@@ -386,15 +356,13 @@ header nav ul li.btn a:hover {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: stretch; /* Растягиваем карту */
+    height: 400px;
 }
 
 .static-map {
     width: 100%;
-    height: 100%; /* Занимает всю высоту контейнера */
-    object-fit: cover; /* Заполняет весь контейнер */
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .map-link {
@@ -407,23 +375,12 @@ header nav ul li.btn a:hover {
     margin-top: 20px;
     transition: all 0.3s ease;
     text-align: center;
-    width: 100%; /* Занимает всю ширину */
+    width: 100%;
 }
 
 .map-link:hover {
     background: #69174f;
     transform: scale(1.05);
-}
-
-/* Фиксированная высота для карты на десктопе */
-@media (min-width: 769px) {
-    .location-map {
-        height: 400px; /* Фиксированная высота для карты */
-    }
-    
-    .location-info {
-        min-height: 400px; /* Такая же высота как у карты */
-    }
 }
 
 /* Футер */
@@ -545,7 +502,7 @@ header nav ul li.btn a:hover {
     }
     
     header {
-        padding: 20px 0;
+        padding: 40px 0 20px;
         text-align: center;
     }
     
@@ -627,8 +584,8 @@ header nav ul li.btn a:hover {
         padding: 20px;
     }
     
-    .static-map {
-        height: 250px;
+    .location-map {
+        height: 300px;
     }
     
     .footer-content {
